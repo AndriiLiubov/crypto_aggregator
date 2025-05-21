@@ -1,8 +1,8 @@
 import requests
 from datetime import datetime
-from coins.models import Coin
+from ..models import Coin
 
-API_KEY = 'тb2ee40ff-47f0-48db-894b-0758c301b5d5'
+API_KEY = 'b2ee40ff-47f0-48db-894b-0758c301b5d5'
 URL = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest'
 
 HEADERS = {
@@ -11,7 +11,7 @@ HEADERS = {
 }
 
 def fetch_and_update_coin_data():
-    response = requests.get(URL, headers=HEADERS, params={'limit': 10, 'convert': 'USD'})
+    response = requests.get(URL, headers=HEADERS, params={'limit': 20, 'convert': 'USD'})
     data = response.json()
 
     for item in data['data']:
