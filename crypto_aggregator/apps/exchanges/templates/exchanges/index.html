@@ -1,0 +1,16 @@
+{% block content %}
+<h1>Биржи</h1>
+<table>
+    <tr>
+        <th>Название</th><th>Комиссия</th><th>Объём 24ч</th><th>Ссылка</th>
+    </tr>
+    {% for exchange in exchanges %}
+    <tr>
+        <td>{{ exchange.name }}</td>
+        <td>{{ exchange.commission }}%</td>
+        <td>${{ exchange.volume_24h }}</td>
+        <td><a href="{{ exchange.referral_link }}" target="_blank">Перейти</a></td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
